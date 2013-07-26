@@ -22,4 +22,7 @@ If you would like to use a different set of column headers, other than what is g
 	$this->csvimport->get_array('test.csv', array('id', 'name', 'company', 'phone'));
 
 *Warning* The function assumes that the number of column headers will match the number of values in each row.
-	
+
+For mac formatted csv files, you will need to specify for the library to auto detect line endings. Thanks to [Ryan Mueller](https://github.com/creativenotice) for this patch.
+
+	$this->csvimport->get_array('test.csv', "", TRUE);
