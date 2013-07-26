@@ -30,10 +30,16 @@ class Csvimport {
      * @access  public
      * @param   filepath        string  Location of the CSV file
      * @param   column_headers  array   Alternate values that will be used for array keys instead of first line of CSV
+     * @param   detect_line_endings  boolean  When true sets the php INI settings to allow script to detect line endings. Needed for CSV files created on Macs.
      * @return  array
      */
-    public function get_array($filepath='', $column_headers='')
+    public function get_array($filepath='', $column_headers='', $detect_line_endings=FALSE)
     {
+        // If true, auto detect row endings
+        if($detect_line_endings){
+            ini_set("auto_detect_line_endings", TRUE);
+        }
+
         // If file exists, set filepath
         if(file_exists($filepath))
         {
