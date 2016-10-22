@@ -1,8 +1,9 @@
-CSV Import
+CSV Import [DEPRECATED]
 ================
 
 CSV Import is a Codeigniter spark which makes it easy to import a CSV file into an associative array.
 
+NOTE: I've not used this code in about 3 years, and will no longer offer any type of support. However, feel free to use this code at your own risk.
 
 Usage
 -----
