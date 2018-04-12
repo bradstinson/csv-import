@@ -132,14 +132,14 @@ class Csvimport {
                     {
                         foreach ($this->column_headers as $key => $value)
                         {
-                            $column_headers[$key] = trim($value);
+                            $column_headers[$key] = trim($value, ' \t\n\r\0\x0B'.chr(239).chr(187).chr(191));
                         }
                     }
                     else // Parse first row for column_headers to use
                     {
                         foreach ($data as $key => $value)
                         {
-                              $column_headers[$key] = trim($value);
+                              $column_headers[$key] = trim($value, ' \t\n\r\0\x0B'.chr(239).chr(187).chr(191));
                         }                
                     }          
                 }
